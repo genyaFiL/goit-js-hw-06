@@ -2,14 +2,18 @@ const form = document.querySelector(".login-form");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (
-    event.currentTarget.elements.email.value &&
-    event.currentTarget.elements.password.value
-  ) {
-    const formData = new FormData(event.currentTarget);
-    formData.forEach((value, name) => {
-      console.log(name, ":", value);
-    });
+
+  const emailData = event.currentTarget.elements.email;
+  const passwordData = event.currentTarget.elements.password;
+
+  if (emailData.value && passwordData.value) {
+    const dataForm = {
+      [emailData.name]: emailData.value,
+      [passwordData.name]: passwordData.value,
+    };
+
+    console.log(dataForm);
+
     event.currentTarget.reset();
   } else {
     return alert("All fields must be completed!");
