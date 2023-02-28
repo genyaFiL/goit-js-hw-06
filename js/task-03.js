@@ -15,7 +15,6 @@ const images = [
 
 const itemGallery = document.querySelector(".gallery");
 
-// const newTechnologies = ["React", "TypeScript", "Node.js"];
 const markup = images
   .map(
     (image) =>
